@@ -1,0 +1,53 @@
+<html>
+<meta charset="UTF-8">
+<head>
+	<style>
+		body {
+			background: black;
+			margin:0;
+			touch-action: none;
+			cursor: none;
+		}
+#mainCanvas {
+	background: gray;
+}
+	</style>
+</head>
+<body>
+	<canvas id="mainCanvas"></canvas>
+	<script>
+function resizeHandler(ev) {
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+}
+function render() {
+	console.log(stack);
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	context.drawImage(stack[0], 0, 0);
+}
+function dropHandler(ev) {
+	ev.preventDefault();
+	Array.from(ev.dataTransfer.items).forEach(function (item) {
+		let file = item.getAsFile();
+		let reader = new FileReader();
+		reader.addEventListener("load", function () {
+			let img = document.createElement("img");
+			img.src = this.result;
+			stack.push(img);
+			render();
+		});
+		reader.readAsDataURL(file);
+	});
+}
+let canvas = document.getElementById("mainCanvas");
+let context = canvas.getContext("2d");
+let stack = [];
+let currentIndex = 0;
+canvas.addEventListener("drop", dropHandler);
+canvas.addEventListener("dragover", ev => ev.preventDefault());
+window.addEventListener("resize", resizeHandler);
+resizeHandler();
+
+	</script>
+</body>
+</html>
