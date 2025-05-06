@@ -7,7 +7,12 @@
 			margin:0;
 			touch-action: none;
 		}
+		#image_sets {
+			color: white;
+			font-size: 5vh;
+		}
 		#myCanvas {
+			display: none;
 			margin: auto;
 			position: absolute;
 			top: 0; bottom: 0;
@@ -18,7 +23,9 @@
 	</style>
 </head>
 <body>
-<script data-main="main.js" src="../js/require.js"></script>
+<ul id="image_sets">
+</ul>
+<script type="module" src="main.js"></script>
 <canvas width=800 height=450 id="myCanvas"></canvas>
 <script>
 </script>
