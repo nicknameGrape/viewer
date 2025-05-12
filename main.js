@@ -47,10 +47,104 @@ const SETS = {
 		"sets/lets_play_11.png",
 		"sets/lets_play_12.png",
 		"sets/lets_play_13.png"
+	],
+	"12 Months": [
+		"sets/months_01_January.jpg",
+		"sets/months_02_February.jpg",
+		"sets/months_03_March.jpg",
+		"sets/months_04_April.jpg",
+		"sets/months_05_May.jpg",
+		"sets/months_06_June.jpg",
+		"sets/months_07_July.jpg",
+		"sets/months_08_August.jpg",
+		"sets/months_09_September.jpg",
+		"sets/months_10_October.jpg",
+		"sets/months_11_November.jpg",
+		"sets/months_12_December.jpg"
+	],
+	"Cool Clocks": [
+		"sets/cool_clocks_1_1.jpg",
+		"sets/cool_clocks_1_2.jpg",
+		"sets/cool_clocks_1_3.jpg",
+		"sets/cool_clocks_1_4.jpg",
+		"sets/cool_clocks_1_5.jpg",
+		"sets/cool_clocks_1_6a.jpg",
+		"sets/cool_clocks_1_6b.jpg",
+		"sets/cool_clocks_1_6c.jpg",
+		"sets/cool_clocks_1_6d.jpg",
+		"sets/cool_clocks_1_6.jpg",
+		"sets/cool_clocks_1_cogsworth.jpg",
+		"sets/cool_clocks_2_1.jpg",
+		"sets/cool_clocks_2_2.jpg",
+		"sets/cool_clocks_2_3.jpeg",
+		"sets/cool_clocks_2_4.jpg",
+		"sets/cool_clocks_2_5.jpg",
+		"sets/cool_clocks_2_6.jpg",
+		"sets/cool_clocks_2_7.jpg",
+		"sets/cool_clocks_3_chain_clock.jpg",
+		"sets/cool_clocks_3_creative-clocks-10-2.jpg",
+		"sets/cool_clocks_3_creative-clocks-11-2.jpg",
+		"sets/cool_clocks_3_creative-clocks-26.jpg",
+		"sets/cool_clocks_3_creative-clocks-8.jpg",
+		"sets/cool_clocks_3_running_alarm_clock.jpg",
+		"sets/cool_clocks_3_youkai_watch_watch.jpeg",
+		"sets/cool_clocks_4_bar_clock.jpg",
+		"sets/cool_clocks_4_fan_clock.jpg",
+		"sets/cool_clocks_4_gear_clock.jpg",
+		"sets/cool_clocks_4_gun_alarm_clock.jpg",
+		"sets/cool_clocks_4_sundial.JPG",
+		"sets/cool_clocks_4_unique-minimalist-creative-watch-geek-swirl.jpg",
+		"sets/cool_clocks_4_word_clock.jpg"
+	],
+	"I always go to school every day.": [
+		"sets/iagtsed01.png",
+		"sets/iagtsed02.png",
+		"sets/iagtsed02a.png",
+		"sets/iagtsed02b.png",
+		"sets/iagtsed03.png",
+		"sets/iagtsed04.png",
+		"sets/iagtsed04a.png",
+		"sets/iagtsed04b.png",
+		"sets/iagtsed05.png",
+		"sets/iagtsed06.png",
+		"sets/iagtsed06a.png",
+		"sets/iagtsed06b.png",
+		"sets/iagtsed07.png",
+		"sets/iagtsed08.png",
+		"sets/iagtsed08a.png",
+		"sets/iagtsed08b.png",
+		"sets/iagtsed09.png"
+	],
+	"Mary had a little lamb.": [
+		"sets/mary_lamb_01.png",
+		"sets/mary_lamb_02.png",
+		"sets/mary_lamb_03.png",
+		"sets/mary_lamb_04.png",
+		"sets/mary_lamb_05.png",
+		"sets/mary_lamb_06.png",
+		"sets/mary_lamb_07.png",
+		"sets/mary_lamb_08.png",
+		"sets/mary_lamb_09.png",
+		"sets/mary_lamb_10.png",
+		"sets/mary_lamb_11.png",
+		"sets/mary_lamb_12.png",
+		"sets/mary_lamb_13.png",
+		"sets/mary_lamb_14.png",
+		"sets/mary_lamb_15.png"
 	]
 }
 
+const MUSIC = {
+	"Beats: Old School": "music/old_school.mp3",
+	"Beats: Hip Hop": "music/simple_hiphop.mp3",
+	"Beats: House": "music/simple_house.mp3",
+	"Beats: Fat Cat": "music/fat_cat.mp3",
+	"Beats: Gym Beats": "music/gym_beats.mp3",
+	"Cool Clocks Music": "music/clocks_music.mp3"
+}
+
 let ulSets = document.getElementById("image_sets");
+let ulMusic = document.getElementById("music");
 Object.entries(SETS).forEach(function (s) {
 	console.log(s);
 	let li = document.createElement("li");
@@ -71,6 +165,18 @@ Object.entries(SETS).forEach(function (s) {
 		});
 	});
 	ulSets.appendChild(li);
+});
+Object.entries(MUSIC).forEach(function (m) {
+	console.log(m);
+	let li = document.createElement("li");
+	let title = document.createElement("span");
+	let audio = document.createElement("audio");
+	audio.src = m[1];
+	audio.controls = true;
+	title.innerHTML = m[0];
+	li.appendChild(title);
+	li.appendChild(audio);
+	ulMusic.appendChild(li);
 });
 
 function fitMontage(context, imgsArray, x, y, w, h, padding=0) {
