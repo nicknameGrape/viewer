@@ -35,6 +35,22 @@ const SETS = {
 		"sets/rain_go_away_04_omg_rain.jpg",
 		"sets/rain_go_away_05_i_know_rain.jpg"
 	],
+	"Fun with Friends": [
+		"sets/play_tag.jpg",
+		"sets/play_dodgeball.jpg",
+		"sets/play_dodgebee.jpg",
+		"sets/play_snowman.jpg",
+		"sets/play_cards.jpg",
+		"sets/play_draw.jpg",
+		"sets/play_jungle_gym.jpg",
+		"sets/play_bugs.jpg",
+		"sets/play_hide_and_seek.jpg",
+		"sets/play_cops_and_robbers.jpg",
+		"sets/play_snowball_fight.jpg",
+		"sets/play_soccer.jpg",
+		"sets/play_unicycles.jpg",
+		"sets/play_video_games.jpg"
+	],
 	"Hey You!  Let's Play.": [
 		"sets/lets_play_01.png",
 		"sets/lets_play_02.png",
@@ -155,6 +171,8 @@ Object.entries(SETS).forEach(function (s) {
 			console.log(src);
 			let img = document.createElement("img");
 			img.addEventListener("load", function () {
+				ulSets.style.display = "none";
+				ulMusic.style.display = "none";
 				canvas.style.display = "block";
 				draw();
 			});
