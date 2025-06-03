@@ -22,6 +22,11 @@ const SETS = {
 		"sets/snow_white_09.jpg",
 		"sets/snow_white_10.jpg"
 	],
+	"Mickey Mouse Shapes Song": [
+		"sets/mmm_shape_song_1_mm_text.png",
+		"sets/mmm_shape_song_2_mm_text.png",
+		"sets/mmm_shape_song_3_mmm_text.png"
+	],
 	"Rain, Rain, Go Away": [
 		"sets/rain_go_away_01_rain_go_away.jpg",
 		"sets/rain_go_away_02a_sun_go_away.jpg",
