@@ -83,6 +83,24 @@ const SETS = {
 		"sets/months_11_November.jpg",
 		"sets/months_12_December.jpg"
 	],
+	"Animals Can": [
+		"sets/animals_can_ant_walk.jpg",
+		"sets/animals_can_bears_badminton.jpg",
+		"sets/animals_can_boy_read.jpg",
+		"sets/animals_can_butterfly_fly.jpg",
+		"sets/animals_can_cat_recorder.jpg",
+		"sets/animals_can_cat_swim.jpg",
+		"sets/animals_can_crocodile_swim.jpg",
+		"sets/animals_can_dolphin_jump.jpg",
+		"sets/animals_can_elephant_soccer.jpg",
+		"sets/animals_can_frog_jump.jpg",
+		"sets/animals_can_girl_sing.jpg",
+		"sets/animals_can_kangaroo_jump_rope.jpg",
+		"sets/animals_can_penguin_dog_run.jpg",
+		"sets/animals_can_penguin_fly.jpg",
+		"sets/animals_can_penguins_soccer.jpg",
+		"sets/animals_can_rabbit_piano.jpg"
+	],
 	"Cool Clocks": [
 		"sets/cool_clocks_1_1.jpg",
 		"sets/cool_clocks_1_2.jpg",
