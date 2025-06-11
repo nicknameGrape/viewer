@@ -3,6 +3,7 @@
 <head>
 	<style>
 		body {
+			display: flex;
 			background: black;
 			margin:0;
 			touch-action: none;
@@ -12,13 +13,19 @@
 			font-size: 5vh;
 		}
 		#music {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
 			color: white;
-			font-size: 5vh;
+			font-size: 4vh;
+			height: 100vh;
 		}
 		#music li {
 			display: flex;
+			flex-direction: column;
 			align-items: center;
 			gap: 10px;
+			border: solid gray;
 		}
 		#myCanvas {
 			display: none;
@@ -41,8 +48,8 @@
 	</script>
 </head>
 <body>
-<ul id="image_sets"></ul>
 <ul id="music"></ul>
+<ul id="image_sets"></ul>
 <script type="module" src="main.js"></script>
 <canvas width=800 height=450 id="myCanvas"></canvas>
 <script>

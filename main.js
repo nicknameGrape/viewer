@@ -69,6 +69,15 @@ const SETS = {
 		"sets/lets_play_12.png",
 		"sets/lets_play_13.png"
 	],
+	"Days of the Week": [
+		"sets/days_01_sunday.jpg",
+		"sets/days_02_monday.jpg",
+		"sets/days_03_tuesday.jpg",
+		"sets/days_04_wednesday.jpg",
+		"sets/days_05_thursday.jpg",
+		"sets/days_06_friday.jpg",
+		"sets/days_07_saturday.jpg"
+	],
 	"12 Months": [
 		"sets/months_01_January.jpg",
 		"sets/months_02_February.jpg",
