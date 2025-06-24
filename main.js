@@ -22,6 +22,27 @@ const SETS = {
 		"sets/snow_white_09.jpg",
 		"sets/snow_white_10.jpg"
 	],
+	"Sing a Rainbow": [
+		"sets/sing_a_rainbow_00.png",
+		"sets/sing_a_rainbow_01.png",
+		"sets/sing_a_rainbow_02.png",
+		"sets/sing_a_rainbow_03.png",
+		"sets/sing_a_rainbow_04.png",
+		"sets/sing_a_rainbow_05.png",
+		"sets/sing_a_rainbow_06.png",
+		"sets/sing_a_rainbow_07.png",
+		"sets/sing_a_rainbow_08i.png",
+		"sets/sing_a_rainbow_09can.png",
+		"sets/sing_a_rainbow_10sing.png",
+		"sets/sing_a_rainbow_11a.png",
+		"sets/sing_a_rainbow_12rain.png",
+		"sets/sing_a_rainbow_13bow.png",
+		"sets/sing_a_rainbow_14singa.png",
+		"sets/sing_a_rainbow_15rainbow.png",
+		"sets/sing_a_rainbow_16singa2.png",
+		"sets/sing_a_rainbow_17rainbow2.png",
+		"sets/sing_a_rainbow_18now.png"
+	],
 	"Mickey Mouse Shapes Song": [
 		"sets/mmm_shape_song_1_mm_text.png",
 		"sets/mmm_shape_song_2_mm_text.png",
