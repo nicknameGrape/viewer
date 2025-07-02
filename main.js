@@ -99,6 +99,18 @@ const SETS = {
 		"sets/days_06_friday.jpg",
 		"sets/days_07_saturday.jpg"
 	],
+	"What Time Is It?": [
+		"sets/what_time_0600_wake_up.png",
+		"sets/what_time_0700_breakfast.png",
+		"sets/what_time_1000_study.png",
+		"sets/what_time_1200_lunch.png",
+		"sets/what_time_1500_snack.png",
+		"sets/what_time_1700_homework.png",
+		"sets/what_time_1900_dinner.png",
+		"sets/what_time_2000_bath.png",
+		"sets/what_time_2100_bed.png",
+		"sets/what_time_2700_dream.png"
+	],
 	"12 Months": [
 		"sets/months_01_January.jpg",
 		"sets/months_02_February.jpg",
