@@ -292,7 +292,7 @@ const SETS = {
 		"sets/summer_vacation_jokes_friend_tdrb6a3q.png",
 		"sets/summer_vacation_jokes_friend_tdrb6a3qg.png",
 		"sets/summer_vacation_jokes_grandparents_7hvz2nudg.png",
-		"sets/big_bad_wolf.jpg",
+		"sets/summer_vacation_jokes_big_bad_wolf.jpg",
 		"sets/summer_vacation_jokes_dog_show_oqxpv6g6.png",
 		"sets/summer_vacation_jokes_dog_show_oqxpv6g6g.png",
 		"sets/summer_vacation_jokes_shopping_annotated.jpg",
@@ -318,6 +318,26 @@ const SETS = {
 		"sets/mary_lamb_13.png",
 		"sets/mary_lamb_14.png",
 		"sets/mary_lamb_15.png"
+	],
+	"Going Places": [
+		"sets/going_places_00.jpg",
+		"sets/going_places_04a.jpg",
+		"sets/going_places_04b.jpg",
+		"sets/going_places_05a.jpg",
+		"sets/going_places_05b.jpg",
+		"sets/going_places_06a.jpg",
+		"sets/going_places_06b.jpg",
+		"sets/going_places_07a.jpg",
+		"sets/going_places_07b.jpg",
+		"sets/going_places_08a.jpg",
+		"sets/going_places_08b.jpg",
+		"sets/going_places_09a.jpg",
+		"sets/going_places_09b.jpg",
+		"sets/going_places_10a.jpg",
+		"sets/going_places_10b.jpg",
+		"sets/going_places_11a.jpg",
+		"sets/going_places_11b.jpg",
+		"sets/going_places_12.jpg"
 	]
 }
 
