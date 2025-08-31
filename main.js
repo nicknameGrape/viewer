@@ -338,6 +338,30 @@ const SETS = {
 		"sets/going_places_11a.jpg",
 		"sets/going_places_11b.jpg",
 		"sets/going_places_12.jpg"
+	],
+	"Tour Planner Card Game": [
+		"sets/tour_planner_card_game_how_to_play_01.png",
+		"sets/tour_planner_card_game_how_to_play_02.png",
+		"sets/tour_planner_card_game_how_to_play_03.png",
+		"sets/tour_planner_card_game_how_to_play_04.png",
+		"sets/tour_planner_card_game_how_to_play_05.png",
+		"sets/tour_planner_card_game_how_to_play_06.png",
+		"sets/tour_planner_card_game_how_to_play_07.png",
+		"sets/tour_planner_card_game_how_to_play_08.png",
+		"sets/tour_planner_card_game_how_to_play_09.png",
+		"sets/tour_planner_card_game_how_to_play_10.png",
+		"sets/tour_planner_card_game_how_to_play_11.png",
+		"sets/tour_planner_card_game_how_to_play_12.png",
+		"sets/tour_planner_card_game_how_to_play_13.png",
+		"sets/tour_planner_card_game_how_to_play_14.png",
+		"sets/tour_planner_card_game_how_to_play_15.png",
+		"sets/tour_planner_card_game_how_to_play_16.png",
+		"sets/tour_planner_card_game_how_to_play_17.png",
+		"sets/tour_planner_card_game_how_to_play_17a.png",
+		"sets/tour_planner_card_game_how_to_play_17b.png",
+		"sets/tour_planner_card_game_how_to_play_18.png",
+		"sets/tour_planner_card_game_how_to_play_19.png",
+		"sets/tour_planner_card_game_how_to_play_20.png"
 	]
 }
 
