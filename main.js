@@ -52,6 +52,34 @@ const SETS = {
 		"sets/category_song_06_character.png",
 		"sets/category_song_07_sport_game.png"
 	],
+	"Phonics Words": [
+		"sets/phonics_words_apple.jpg",
+		"sets/phonics_words_book.jpg",
+		"sets/phonics_words_crayon.jpg",
+		"sets/phonics_words_drum.jpg",
+		"sets/phonics_words_egg.jpg",
+		"sets/phonics_words_fish.jpg",
+		"sets/phonics_words_gorilla.jpg",
+		"sets/phonics_words_hat.jpg",
+		"sets/phonics_words_ink.jpg",
+		"sets/phonics_words_jet.jpg",
+		"sets/phonics_words_king.jpg",
+		"sets/phonics_words_lemon.jpg",
+		"sets/phonics_words_monkey.jpg",
+		"sets/phonics_words_notebook.jpg",
+		"sets/phonics_words_orange.jpg",
+		"sets/phonics_words_pig.jpg",
+		"sets/phonics_words_queen.jpg",
+		"sets/phonics_words_rabbit.jpg",
+		"sets/phonics_words_sun.jpg",
+		"sets/phonics_words_tree.jpg",
+		"sets/phonics_words_umbrella.jpg",
+		"sets/phonics_words_violin.jpg",
+		"sets/phonics_words_watch.jpg",
+		"sets/phonics_words_x_box.jpg",
+		"sets/phonics_words_yacht.jpg",
+		"sets/phonics_words_zero.jpg"
+	],
 	"Mickey Mouse Shapes Song": [
 		"sets/mmm_shape_song_1_mm_text.png",
 		"sets/mmm_shape_song_2_mm_text.png",
@@ -119,6 +147,9 @@ const SETS = {
 		"sets/what_time_2000_bath.png",
 		"sets/what_time_2100_bed.png",
 		"sets/what_time_2700_dream.png"
+	],
+	"Do you have a pencil?": [
+		"sets/do_you_have_a_pencil_lets_try_2.jpg"
 	],
 	"12 Months": [
 		"sets/months_01_January.jpg",
