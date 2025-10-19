@@ -293,6 +293,20 @@ const SETS = {
 		"sets/animal_race_64.png",
 		"sets/animal_race_65.png"
 	],
+	"Fast Mosquito": [
+		"sets/fast_mosquito_00.png",
+		"sets/fast_mosquito_01.png",
+		"sets/fast_mosquito_02.png",
+		"sets/fast_mosquito_03.png",
+		"sets/fast_mosquito_04.png",
+		"sets/fast_mosquito_05.png",
+		"sets/fast_mosquito_06.png",
+		"sets/fast_mosquito_07.png",
+		"sets/fast_mosquito_08.png",
+		"sets/fast_mosquito_09.png",
+		"sets/fast_mosquito_10.png",
+		"sets/fast_mosquito_11.png"
+	],
 	"Cool Clocks": [
 		"sets/cool_clocks_1_1.jpg",
 		"sets/cool_clocks_1_2.jpg",
