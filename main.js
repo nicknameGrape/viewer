@@ -307,6 +307,31 @@ const SETS = {
 		"sets/fast_mosquito_10.png",
 		"sets/fast_mosquito_11.png"
 	],
+	"Restaurant: Food/Drink Rap": [
+		"sets/restaurant_rap_01.jpg",
+		"sets/restaurant_rap_02.jpg",
+		"sets/restaurant_rap_03.jpg",
+		"sets/restaurant_rap_04.jpg",
+		"sets/restaurant_rap_05.jpg",
+		"sets/restaurant_rap_06.jpg",
+		"sets/restaurant_rap_07.jpg",
+		"sets/restaurant_rap_08.jpg",
+		"sets/restaurant_rap_09.jpg",
+		"sets/restaurant_rap_10.jpg",
+		"sets/restaurant_rap_11.jpg",
+		"sets/restaurant_rap_12.jpg",
+		"sets/restaurant_rap_13.jpg",
+		"sets/restaurant_rap_14.jpg",
+		"sets/restaurant_rap_15.jpg",
+		"sets/restaurant_rap_16.jpg"
+	],
+	"Restaurant: Levels of Polite": [
+		"sets/restaurant_polite_01_japanese_junko.jpg",
+		"sets/restaurant_polite_02_tango_dake_tanjirou.jpg",
+		"sets/restaurant_polite_03_chotto_chigau_charlie.jpg",
+		"sets/restaurant_polite_04_selfish_wakana.jpg",
+		"sets/restaurant_polite_05_charming_mr_wood.jpg"
+	],
 	"Cool Clocks": [
 		"sets/cool_clocks_1_1.jpg",
 		"sets/cool_clocks_1_2.jpg",
