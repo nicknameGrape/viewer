@@ -266,7 +266,7 @@ const SETS = {
 	"Do you have a pencil?": [
 		"sets/do_you_have_a_pencil_lets_try_2.jpg"
 	],
-	"Acronym Quiz" [
+	"Acronym Quiz": [
 		"sets\acronym_quiz (1).png",
 		"sets\acronym_quiz (2).png",
 		"sets\acronym_quiz (3).png",
