@@ -1,0 +1,82 @@
+body {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	background: darkgray;
+	margin: 0px 10px 0px 10px;
+	touch-action: none;
+}
+input {
+	display: none;
+}
+label {
+	background: lightpink;
+	border: thick outset lightpink;
+	border-radius: 10px;
+	padding: 5px;
+	user-select: none;
+}
+input:checked + label {
+	background: lime;
+	border: thick inset lime;
+}
+#controls {
+	position: sticky;
+	top: 0px;
+	display: flex;
+	height: 100vh;
+	gap: 10px;
+}
+#controls div {
+	align-items: center;
+	justify-content: center;
+}
+#tiles_or_slides {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+#tiles_or_slides label {
+	writing-mode: sideways-lr;
+}
+#next_prev_random {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+#next_prev_random button {
+	background: yellow;
+	border: thick outset yellow;
+	border-radius: 10px;
+	padding: 5px;
+	user-select: none;
+}
+#next_prev_random button:active {
+	border: thick inset yellow;
+}
+#next {
+}
+#prev {
+}
+#rand {
+}
+#slides {
+	display: none;
+}
+#tiles {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: start;
+	gap: 10px;
+}
+#tiles img {
+	height: calc(25vh - 10px);
+	border: dotted white;
+	box-sizing: border-box;
+}
+#tiles img:hover {
+	border-color: yellow;
+}
+#slides img {
+	height: 100vh;
+}

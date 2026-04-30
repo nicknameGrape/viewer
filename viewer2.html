@@ -1,30 +1,44 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <head>
-	<style>
-		body {
-			background: black;
-			margin:0;
-			touch-action: none;
-			cursor: none;
-		}
-#mainCanvas {
-	background: gray;
-}
-	</style>
+	<link rel="stylesheet" href="viewer_styles.css"/>
 </head>
 <body>
-	<canvas id="mainCanvas"></canvas>
+	<div id="controls">
+		<div id="tiles_or_slides">
+			<em style="grid-area: title">View</em>
+			<input type="radio" name="view" id="button_tiles" checked></input>
+			<label for="button_tiles">Tiles</label>
+			<input type="radio" name="view" id="button_slides"></input>
+			<label for="button_slides">Slides</label>
+		</div>
+		<hr/>
+		<div id="next_prev_random">
+			<em>Slide</em>
+			<pre><span id="currentSlide">1</span> / <span id="numberOfSlides">?</span></pre>
+			<button id="next">Next<br>&rarr;</button>
+			<button id="prev">Prev<br>&larr;</button>
+			<button id="rand">Random</button>
+		</div>
+		<div id="rows">
+			<em>Number of Rows</em>
+			<input type="radio" name="rows" id="rows2" value="2"></input>
+			<label for="rows2">2</label>
+			<input type="radio" name="rows" id="rows3" value="3"></input>
+			<label for="rows3">3</label>
+			<input type="radio" name="rows" id="rows4" value="4" checked></input>
+			<label for="rows4">4</label>
+			<input type="radio" name="rows" id="rows5" value="5"></input>
+			<label for="rows5">5</label>
+			<input type="radio" name="rows" id="rows6" value="6"></input>
+			<label for="rows6">6</label>
+		</div>
+	</div>
+	<div id="slides">
+	</div>
+	<div id="tiles">
+	</div>
 	<script>
-function resizeHandler(ev) {
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
-}
-function render() {
-	console.log(stack);
-	context.clearRect(0, 0, canvas.width, canvas.height);
-	context.drawImage(stack[0], 0, 0);
-}
 function dropHandler(ev) {
 	ev.preventDefault();
 	Array.from(ev.dataTransfer.items).forEach(function (item) {
@@ -34,20 +48,22 @@ function dropHandler(ev) {
 			let img = document.createElement("img");
 			img.src = this.result;
 			stack.push(img);
-			render();
+			document.getElementById("tiles").appendChild(img);
+			console.log(stack);
 		});
 		reader.readAsDataURL(file);
 	});
 }
-let canvas = document.getElementById("mainCanvas");
-let context = canvas.getContext("2d");
+function setTileHeight(ev) {
+	let newHeight = 100 / ev.target.value;
+	document.querySelectorAll("#tiles img").forEach(el => el.style.height = "calc(" + newHeight + "vh - 10px)");
+}
 let stack = [];
 let currentIndex = 0;
-canvas.addEventListener("drop", dropHandler);
-canvas.addEventListener("dragover", ev => ev.preventDefault());
-window.addEventListener("resize", resizeHandler);
-resizeHandler();
-
+window.addEventListener("dragover", function (ev) {console.log("DRGOVR");});
+window.addEventListener("dragover", ev => ev.preventDefault());
+window.addEventListener("drop", dropHandler);
+radioButtonsThatControlRowHeight = Array.from(document.querySelectorAll('input[name="rows"]')).forEach(el => el.addEventListener("input", setTileHeight));
 	</script>
 </body>
 </html>
