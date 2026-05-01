@@ -80,7 +80,7 @@ input:checked + label {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	align-content: start;
+	align-content: center;
 	gap: 10px;
 }
 #tiles img {
@@ -93,4 +93,6 @@ input:checked + label {
 }
 #slides img {
 	height: 100vh;
+	max-width: 80vw;
+	object-fit: contain;
 }
