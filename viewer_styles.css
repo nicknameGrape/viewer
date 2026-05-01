@@ -16,8 +16,9 @@ label {
 	user-select: none;
 }
 input:checked + label {
-	background: lime;
-	border: thick inset lime;
+	background: hotpink;
+	border-color: hotpink;
+	border-style: inset;
 }
 #controls {
 	position: sticky;
@@ -38,29 +39,42 @@ input:checked + label {
 #tiles_or_slides label {
 	writing-mode: sideways-lr;
 }
-#next_prev_random {
-	display: flex;
+#first_next_prev_random {
+	display: none;
 	flex-direction: column;
 	gap: 10px;
+	width: 7vw;
 }
-#next_prev_random button {
+#first_next_prev_random button {
 	background: yellow;
 	border: thick outset yellow;
 	border-radius: 10px;
 	padding: 5px;
 	user-select: none;
 }
-#next_prev_random button:active {
-	border: thick inset yellow;
+#first_next_prev_random button:active {
+	background: gold;
+	border: thick inset gold;
 }
 #next {
+	height: 15vh;
 }
 #prev {
 }
 #rand {
 }
+#first_next_prev_random input:checked + label {
+	border: thick inset yellow;
+}
+#rows {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 7vw;
+}
 #slides {
 	display: none;
+	justify-content: center;
 }
 #tiles {
 	display: flex;
