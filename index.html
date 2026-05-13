@@ -178,6 +178,7 @@ document.addEventListener("keydown", function (ev) {
 	if (ev.key === "6") {document.getElementById("rows6").click();}
 })
 let set = new URLSearchParams(document.location.search).get("set");
+let pdf = new URLSearchParams(document.location.search).get("pdf");
 let firstView = new URLSearchParams(document.location.search).get("view");
 if (set !== null) {
 	console.log(set);
@@ -194,6 +195,39 @@ if (set !== null) {
 			}
 		}
 	});
+} else {
+	console.log("no set specified");
+}
+
+if (pdf !== null) {
+	console.log(pdf);
+	var loadingTask = pdfjsLib.getDocument("pdfs/"+pdf);
+	loadingTask.promise.then(function(pdf) {
+			console.log('PDF loaded');
+
+			// Fetch all pages
+			console.log(pdf.numPages, "pages");
+			for (let i=1; i<=pdf.numPages; i++) {
+			pdf.getPage(i).then(function(page) {
+					var viewport = page.getViewport({"scale": 1.5});
+					console.log('Page loaded');
+					let canvas = document.createElement("canvas");
+					let context = canvas.getContext("2d");
+					canvas.width = viewport.width;
+					canvas.height = viewport.height;
+					var renderTask = page.render({"canvasContext": context, "viewport": viewport});
+					renderTask.promise.then(function () {
+							console.log('Page rendered');
+							slides.push(canvas);
+							document.getElementById("tiles").appendChild(canvas);
+							});
+
+					});
+			}
+	});
+	if (firstView !== null) {
+		document.getElementById("button_"+firstView).click();
+	}
 } else {
 	console.log("no set specified");
 }
