@@ -83,15 +83,15 @@ input:checked + label {
 	align-content: center;
 	gap: 10px;
 }
-#tiles img {
+#tiles img, #tiles canvas {
 	height: calc(25vh - 10px);
 	border: dotted white;
 	box-sizing: border-box;
 }
-#tiles img:hover {
+#tiles img:hover, #tiles canvas:hover {
 	border-color: yellow;
 }
-#slides img {
+#slides img, #slides canvas {
 	height: 100vh;
 	max-width: 80vw;
 	object-fit: contain;

@@ -41,26 +41,59 @@
 	</div>
 	<div id="tiles">
 	</div>
+	<script type="module" src="pdf.mjs"></script>
 	<script src="sets.js"></script>
-	<script>
+	<script type="module">
+//pdfjs stuff
+var { pdfjsLib } = globalThis;
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdf.worker.mjs';
+
 function dropHandler(ev) {
 	ev.preventDefault();
 	Array.from(ev.dataTransfer.items).forEach(function (item) {
 		let file = item.getAsFile();
 		let reader = new FileReader();
+		let type = item.type;
 		reader.addEventListener("load", function () {
-			let img = document.createElement("img");
-			img.src = this.result;
-			slides.push(img);
-			document.getElementById("tiles").appendChild(img);
-			console.log(slides);
+			if (type.startsWith("image")) {
+				let img = document.createElement("img");
+				img.src = this.result;
+				slides.push(img);
+				document.getElementById("tiles").appendChild(img);
+				console.log(slides);
+			} else if (type === ("application/pdf")) {
+				var loadingTask = pdfjsLib.getDocument(this.result);
+				loadingTask.promise.then(function(pdf) {
+						console.log('PDF loaded');
+
+						// Fetch all pages
+						console.log(pdf.numPages, "pages");
+						for (let i=1; i<=pdf.numPages; i++) {
+						pdf.getPage(i).then(function(page) {
+								var viewport = page.getViewport({"scale": 1.5});
+								console.log('Page loaded');
+								let canvas = document.createElement("canvas");
+								let context = canvas.getContext("2d");
+								canvas.width = viewport.width;
+								canvas.height = viewport.height;
+								var renderTask = page.render({"canvasContext": context, "viewport": viewport});
+								renderTask.promise.then(function () {
+										console.log('Page rendered');
+										slides.push(canvas);
+										document.getElementById("tiles").appendChild(canvas);
+										});
+
+								});
+						}
+				});
+			}
 		});
 		reader.readAsDataURL(file);
 	});
 }
 function setTileHeight(ev) {
 	let newHeight = 100 / ev.target.value;
-	document.querySelectorAll("#tiles img").forEach(el => el.style.height = "calc(" + newHeight + "vh - 10px)");
+	document.querySelectorAll("#tiles img, #tiles canvas").forEach(el => el.style.height = "calc(" + newHeight + "vh - 10px)");
 }
 let slides = [];
 let currentIndex = 0;
@@ -78,35 +111,55 @@ document.getElementById("button_slides").addEventListener("change", function () 
 	document.getElementById("first_next_prev_random").style.display="flex";
 	document.getElementById("tiles").style.display="none";
 	document.getElementById("slides").style.display="flex";
-	document.getElementById("slide").src = slides[currentIndex].src;
+	if (slides[currentIndex].tagName === "IMG") {
+		document.getElementById("slide").src = slides[currentIndex].src;
+	} else if (slides[currentIndex].tagName === "CANVAS") {
+		document.getElementById("slide").src = slides[currentIndex].toDataURL();
+	}
 	document.getElementById("currentSlide").innerHTML = currentIndex+1;
 	document.getElementById("numberOfSlides").innerHTML = slides.length;
 });
 document.getElementById("first").addEventListener("click", function () {
 	currentIndex = 0;
-	document.getElementById("slide").src = slides[currentIndex].src;
+	if (slides[currentIndex].tagName === "IMG") {
+		document.getElementById("slide").src = slides[currentIndex].src;
+	} else if (slides[currentIndex].tagName === "CANVAS") {
+		document.getElementById("slide").src = slides[currentIndex].toDataURL();
+	}
 	document.getElementById("currentSlide").innerHTML = currentIndex+1;
 	document.getElementById("numberOfSlides").innerHTML = slides.length;
 });
 document.getElementById("next").addEventListener("click", function () {
 	currentIndex = (currentIndex+1)%slides.length;
-	document.getElementById("slide").src = slides[currentIndex].src;
+	if (slides[currentIndex].tagName === "IMG") {
+		document.getElementById("slide").src = slides[currentIndex].src;
+	} else if (slides[currentIndex].tagName === "CANVAS") {
+		document.getElementById("slide").src = slides[currentIndex].toDataURL();
+	}
 	document.getElementById("currentSlide").innerHTML = currentIndex+1;
 	document.getElementById("numberOfSlides").innerHTML = slides.length;
 });
 document.getElementById("prev").addEventListener("click", function () {
 	currentIndex = (currentIndex-1+slides.length)%slides.length;
-	document.getElementById("slide").src = slides[currentIndex].src;
+	if (slides[currentIndex].tagName === "IMG") {
+		document.getElementById("slide").src = slides[currentIndex].src;
+	} else if (slides[currentIndex].tagName === "CANVAS") {
+		document.getElementById("slide").src = slides[currentIndex].toDataURL();
+	}
 	document.getElementById("currentSlide").innerHTML = currentIndex+1;
 	document.getElementById("numberOfSlides").innerHTML = slides.length;
 });
 document.getElementById("rand").addEventListener("click", function () {
 	currentIndex = Math.floor(Math.random()*slides.length);
-	document.getElementById("slide").src = slides[currentIndex].src;
+	if (slides[currentIndex].tagName === "IMG") {
+		document.getElementById("slide").src = slides[currentIndex].src;
+	} else if (slides[currentIndex].tagName === "CANVAS") {
+		document.getElementById("slide").src = slides[currentIndex].toDataURL();
+	}
 	document.getElementById("currentSlide").innerHTML = currentIndex+1;
 	document.getElementById("numberOfSlides").innerHTML = slides.length;
 });
-radioButtonsThatControlRowHeight = Array.from(document.querySelectorAll('input[name="rows"]')).forEach(el => el.addEventListener("input", setTileHeight));
+let radioButtonsThatControlRowHeight = Array.from(document.querySelectorAll('input[name="rows"]')).forEach(el => el.addEventListener("input", setTileHeight));
 document.addEventListener("keydown", function (ev) {
 	if (ev.key === "s") {document.getElementById("button_slides").click();}
 	if (ev.key === "t") {document.getElementById("button_tiles").click();}
@@ -125,6 +178,7 @@ document.addEventListener("keydown", function (ev) {
 	if (ev.key === "6") {document.getElementById("rows6").click();}
 })
 let set = new URLSearchParams(document.location.search).get("set");
+let pdf = new URLSearchParams(document.location.search).get("pdf");
 let firstView = new URLSearchParams(document.location.search).get("view");
 if (set !== null) {
 	console.log(set);
@@ -143,6 +197,39 @@ if (set !== null) {
 			}
 		}
 	});
+} else {
+	console.log("no set specified");
+}
+
+if (pdf !== null) {
+	console.log(pdf);
+	var loadingTask = pdfjsLib.getDocument("pdfs/"+pdf);
+	loadingTask.promise.then(function(pdf) {
+			console.log('PDF loaded');
+
+			// Fetch all pages
+			console.log(pdf.numPages, "pages");
+			for (let i=1; i<=pdf.numPages; i++) {
+			pdf.getPage(i).then(function(page) {
+					var viewport = page.getViewport({"scale": 1.5});
+					console.log('Page loaded');
+					let canvas = document.createElement("canvas");
+					let context = canvas.getContext("2d");
+					canvas.width = viewport.width;
+					canvas.height = viewport.height;
+					var renderTask = page.render({"canvasContext": context, "viewport": viewport});
+					renderTask.promise.then(function () {
+							console.log('Page rendered');
+							slides.push(canvas);
+							document.getElementById("tiles").appendChild(canvas);
+							});
+
+					});
+			}
+	});
+	if (firstView !== null) {
+		document.getElementById("button_"+firstView).click();
+	}
 } else {
 	console.log("no set specified");
 }
