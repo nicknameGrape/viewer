@@ -138,6 +138,8 @@ if (set !== null) {
 		} else {
 			if (SETS[set].length === 1) {
 				document.getElementById("button_slides").click();
+				document.getElementById("currentSlide").innerHTML = currentIndex+1;
+				document.getElementById("numberOfSlides").innerHTML = SETS[set].length;
 			}
 		}
 	});
