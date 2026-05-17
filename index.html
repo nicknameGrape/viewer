@@ -70,7 +70,7 @@ function dropHandler(ev) {
 						console.log(pdf.numPages, "pages");
 						for (let i=1; i<=pdf.numPages; i++) {
 						pdf.getPage(i).then(function(page) {
-								var viewport = page.getViewport({"scale": 1.5});
+								var viewport = page.getViewport({"scale": 1});
 								console.log('Page loaded');
 								let canvas = document.createElement("canvas");
 								let context = canvas.getContext("2d");
@@ -180,6 +180,7 @@ document.addEventListener("keydown", function (ev) {
 let set = new URLSearchParams(document.location.search).get("set");
 let pdf = new URLSearchParams(document.location.search).get("pdf");
 let firstView = new URLSearchParams(document.location.search).get("view");
+let rows = new URLSearchParams(document.location.search).get("rows");
 if (set !== null) {
 	console.log(set);
 	SETS[set].forEach(function (src) {
@@ -187,8 +188,14 @@ if (set !== null) {
 		img.src = src;
 		slides.push(img);
 		tiles.appendChild(img)
-		if (firstView !== null) {
+		if (firstView === "slides" || firstView === "tiles") {
 			document.getElementById("button_"+firstView).click();
+			if (rows !== null) {
+				let asInt = parseInt(rows);
+				if (asInt >= 2 && asInt <= 6) {
+					document.getElementById("rows"+rows).click();
+				}
+			}
 		} else {
 			if (SETS[set].length === 1) {
 				document.getElementById("button_slides").click();
@@ -205,34 +212,43 @@ if (pdf !== null) {
 	console.log(pdf);
 	var loadingTask = pdfjsLib.getDocument("pdfs/"+pdf);
 	loadingTask.promise.then(function(pdf) {
-			console.log('PDF loaded');
-
-			// Fetch all pages
-			console.log(pdf.numPages, "pages");
-			for (let i=1; i<=pdf.numPages; i++) {
+		console.log('PDF loaded');
+		// Fetch all pages
+		console.log(pdf.numPages, "pages");
+		let loaded = 0;
+		for (let i=1; i<=pdf.numPages; i++) {
 			pdf.getPage(i).then(function(page) {
-					var viewport = page.getViewport({"scale": 1.5});
-					console.log('Page loaded');
-					let canvas = document.createElement("canvas");
-					let context = canvas.getContext("2d");
-					canvas.width = viewport.width;
-					canvas.height = viewport.height;
-					var renderTask = page.render({"canvasContext": context, "viewport": viewport});
-					renderTask.promise.then(function () {
-							console.log('Page rendered');
-							slides.push(canvas);
-							document.getElementById("tiles").appendChild(canvas);
-							});
-
-					});
-			}
+				var viewport = page.getViewport({"scale": 1.5});
+				console.log('Page loaded');
+				let canvas = document.createElement("canvas");
+				let context = canvas.getContext("2d");
+				canvas.width = viewport.width;
+				canvas.height = viewport.height;
+				slides.push(canvas);
+				var renderTask = page.render({"canvasContext": context, "viewport": viewport});
+				renderTask.promise.then(function () {
+					console.log('Page rendered');
+					document.getElementById("tiles").appendChild(canvas);
+					if (firstView === "slides" || firstView === "tiles") {
+						document.getElementById("button_"+firstView).click();
+					}
+					loaded++;
+					if (loaded === pdf.numPages) {
+						if (rows !== null) {
+							let asInt = parseInt(rows);
+							if (asInt >= 2 && asInt <= 6) {
+								document.getElementById("rows"+rows).click();
+							}
+						}
+					}
+				});
+			});
+		}
 	});
-	if (firstView !== null) {
-		document.getElementById("button_"+firstView).click();
-	}
 } else {
 	console.log("no set specified");
 }
+
 	</script>
 </body>
 </html>
