@@ -234,6 +234,8 @@ if (pdf !== null) {
 					}
 					loaded++;
 					if (loaded === pdf.numPages) {
+						console.log("RENDERFIRST", slides[0]);
+						document.getElementById("slide").src = slides[0].toDataURL();
 						if (rows !== null) {
 							let asInt = parseInt(rows);
 							if (asInt >= 2 && asInt <= 6) {
