@@ -579,13 +579,13 @@ const SETS = {
 		"sets/cool_clocks_3_creative-clocks-26.jpg",
 		"sets/cool_clocks_3_creative-clocks-8.jpg",
 		"sets/cool_clocks_3_running_alarm_clock.jpg",
-		"sets/cool_clocks_3_youkai_watch_watch.jpeg",
-		"sets/cool_clocks_4_bar_clock.jpg",
+		//"sets/cool_clocks_3_youkai_watch_watch.jpeg",
+		//"sets/cool_clocks_4_bar_clock.jpg",
 		"sets/cool_clocks_4_fan_clock.jpg",
-		"sets/cool_clocks_4_gear_clock.jpg",
+		//"sets/cool_clocks_4_gear_clock.jpg",
 		"sets/cool_clocks_4_gun_alarm_clock.jpg",
 		"sets/cool_clocks_4_sundial.JPG",
-		"sets/cool_clocks_4_unique-minimalist-creative-watch-geek-swirl.jpg",
+		//"sets/cool_clocks_4_unique-minimalist-creative-watch-geek-swirl.jpg",
 		"sets/cool_clocks_4_word_clock.jpg"
 	],
 	"I always go to school every day.": [
