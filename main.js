@@ -266,6 +266,11 @@ const SETS = {
 	"Do you have a pencil?": [
 		"sets/do_you_have_a_pencil_lets_try_2.jpg"
 	],
+	"Stationery Rap": [
+		"sets/stationery_rap_1_pen_pencil_pencil_case_pencil_sharpener.png",
+		"sets/stationery_rap_2_marker_stapler_ruler_eraser.png",
+		"sets/stationery_rap_3_notebook_magnet_calendar_glue_stick.png"
+	],
 	"Acronym Quiz": [
 		"sets/acronym_quiz (1).png",
 		"sets/acronym_quiz (2).png",
