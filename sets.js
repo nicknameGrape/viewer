@@ -515,6 +515,13 @@ const SETS = {
 		"sets/animal_race_64.png",
 		"sets/animal_race_65.png"
 	],
+	"New Kid": [
+		"sets/new_kid_01.png",
+		"sets/new_kid_02.png",
+		"sets/new_kid_03.png",
+		"sets/new_kid_04.png",
+		"sets/new_kid_05.jpg"
+	],
 	"Fast Mosquito": [
 		"sets/fast_mosquito_00.png",
 		"sets/fast_mosquito_01.png",
