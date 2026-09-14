@@ -871,5 +871,18 @@ const SETS = {
 		"sets/halloween_phonics_y_1.jpg",
 		"sets/halloween_phonics_z_0.jpg",
 		"sets/halloween_phonics_z_1.jpg"
+	],
+	"Candies": [
+		"sets/candies_01.jpg",
+		"sets/candies_02.jpg",
+		"sets/candies_03.jpg",
+		"sets/candies_04.jpg",
+		"sets/candies_05.jpg",
+		"sets/candies_06.jpg",
+		"sets/candies_07.jpg",
+		"sets/candies_08.jpg",
+		"sets/candies_09.jpg",
+		"sets/candies_10.jpg",
+		"sets/candies_11.jpg"
 	]
 };
